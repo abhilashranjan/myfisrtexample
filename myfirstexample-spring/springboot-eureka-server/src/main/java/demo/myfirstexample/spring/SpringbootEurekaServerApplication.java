@@ -11,8 +11,5 @@ public class SpringbootEurekaServerApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringbootEurekaServerApplication.class, args);
-//		SpringApplication eurekaServer = new SpringApplication(SpringbootEurekaServerApplication.class);
-//		eurekaServer.addListeners(new ApplicationPidFileWriter("eureka-server.pid"));
-//		eurekaServer.run();
 	}
 }
