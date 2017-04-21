@@ -21,8 +21,9 @@ public class DFSAlgo {
         for(int i=0; i<nodes.size();i++){
             if(nodes.get(i).equals(x)){
                 nodeIndex=i;
+                break;
             }
-            break;
+
         }
 
         if(nodeIndex!=-1){
@@ -38,8 +39,9 @@ public class DFSAlgo {
     public void dfs(int a[][], Node x){
         System.out.println("\t"+x.data);
         List<Node> neiboughers= getNeiboughrs(a,x);
-        for(Node n:neiboughers){
-            if(!n.visted){
+        for (int i = 0; i < neiboughers.size(); i++) {
+            Node n=neiboughers.get(i);
+            if(n!=null && !n.visted){
                 dfs(a,n);
                 n.visted=true;
             }
