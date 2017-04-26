@@ -11,31 +11,50 @@
 
     <artifactId>jakson-example</artifactId>
 <dependencies>
+    <!--<dependency>-->
+        <!--<groupId>com.fasterxml.jackson.core</groupId>-->
+        <!--<artifactId>jackson-annotations</artifactId>-->
+        <!--<version>2.2.2</version>-->
+    <!--</dependency>-->
+    <!--<dependency>-->
+        <!--<groupId>com.fasterxml.jackson.core</groupId>-->
+        <!--<artifactId>jackson-core</artifactId>-->
+        <!--<version>2.2.2</version>-->
+    <!--</dependency>-->
+    <!--<dependency>-->
+        <!--<groupId>com.fasterxml.jackson.core</groupId>-->
+        <!--<artifactId>jackson-databind</artifactId>-->
+        <!--<version>2.2.2</version>-->
+    <!--</dependency>-->
+    <!--<dependency>-->
+        <!--<groupId>org.codehaus.jackson</groupId>-->
+        <!--<artifactId>jackson-mapper-asl</artifactId>-->
+        <!--<version>1.9.2</version>-->
+    <!--</dependency>-->
+    <!--<dependency>-->
+        <!--<groupId>org.codehaus.jackson</groupId>-->
+        <!--<artifactId>jackson-core-asl</artifactId>-->
+        <!--<version>1.9.2</version>-->
+    <!--</dependency>-->
+
+    <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-core_2.10 -->
     <dependency>
-        <groupId>com.fasterxml.jackson.core</groupId>
-        <artifactId>jackson-annotations</artifactId>
-        <version>2.2.2</version>
+        <groupId>org.apache.spark</groupId>
+        <artifactId>spark-core_2.11</artifactId>
+        <version>1.6.0</version>
     </dependency>
     <dependency>
-        <groupId>com.fasterxml.jackson.core</groupId>
-        <artifactId>jackson-core</artifactId>
-        <version>2.2.2</version>
+        <groupId>org.apache.spark</groupId>
+        <artifactId>spark-sql_2.11</artifactId>
+        <version>1.6.0</version>
     </dependency>
     <dependency>
-        <groupId>com.fasterxml.jackson.core</groupId>
-        <artifactId>jackson-databind</artifactId>
-        <version>2.2.2</version>
-    </dependency>
-    <dependency>
-        <groupId>org.codehaus.jackson</groupId>
-        <artifactId>jackson-mapper-asl</artifactId>
-        <version>1.9.2</version>
-    </dependency>
-    <dependency>
-        <groupId>org.codehaus.jackson</groupId>
-        <artifactId>jackson-core-asl</artifactId>
-        <version>1.9.2</version>
+        <groupId>com.google.guava</groupId>
+        <artifactId>guava</artifactId>
+        <version>18.0</version>
     </dependency>
 
-    </dependencies>
+
+
+</dependencies>
 </project>
