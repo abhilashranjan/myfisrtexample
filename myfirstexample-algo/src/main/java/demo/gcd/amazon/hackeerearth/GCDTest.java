@@ -1,5 +1,7 @@
 package demo.gcd.amazon.hackeerearth;
 
+import java.util.Scanner;
+
 /**
  * Created by anya on 26/4/17.
  * Akash is interested in a new function F such that,
@@ -64,11 +66,42 @@ public class GCDTest {
 
     public static void main(String[] args) {
         GCDTest gcdTest= new GCDTest();
-        System.out.println(gcdTest.mathFunctionr(3));
+        Scanner sc=new Scanner(System.in);
+        long sizeOfArray= Long.parseLong(sc.nextLine());
+
+        long array[]=new long[Math.toIntExact(sizeOfArray)];
+        String split[]=sc.nextLine().split(" ");
+        for (int i=0; i<sizeOfArray; i++){
+            array[i]=Long.parseLong(split[i]);
+        }
+        int numberOfQueryy=Integer.parseInt(sc.nextLine());
+        String query[]=new String[numberOfQueryy];
+        for (int j=0; j<numberOfQueryy; j++){
+            query[j] =sc.nextLine();
+        }
+
+        for (int k=0; k<numberOfQueryy;k++) {
+            long result=0;
+            String q[]=query[k].split(" ");
+            if(query[k].startsWith("C") ||(query[k].startsWith("c"))){
+                for(int l=Integer.parseInt(q[1]); l<=Integer.parseInt(q[2]); l++){
+                    result+=gcdTest.mathFunction(array[l-1]);
+                }
+
+                //result=gcdTest.mathFunction(array[Integer.parseInt(q[1])-1])+gcdTest.mathFunction(array[Integer.parseInt(q[2])-1]);
+                System.out.println(result);
+            }if(query[k].startsWith("U") ||(query[k].startsWith("u"))){
+                array[Integer.parseInt(q[1])-1]=Integer.parseInt(q[2]);
+
+            }
+        }
+
     }
 
-    public int mathFunction(int num){
-        int val=0;
+
+
+    public long mathFunction(long num){
+        long val=0;
         int init=1;
         if(num==init){
             val=gcd(init,num);
@@ -79,20 +112,10 @@ public class GCDTest {
         return val;
     }
 
-    public int mathFunctionr(int num){
-        int val=0;
-        int init=1;
-        if(num==init){
-            val=gcd(init,num);
-        }else{
-            init= init+1;
-             val+=mathFunctionr(gcd(init,num));
-        }
-        return val;
-    }
 
-    public int gcd(int n1, int n2){
-        if(n1==0 || n2==0){
+
+    public long gcd(long n1, long n2){
+        if(n1==0){
             return n2;
         }else{
             return  gcd(n2%n1, n1);
