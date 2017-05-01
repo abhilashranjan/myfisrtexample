@@ -8,17 +8,11 @@ public class SimpleStack {
     int top=-1;
 
     public boolean isEmpty(){
-        if(charr[0]=='\0'){
-            return  true;
-        }
-        return  false;
+        return charr[0] == '\0';
     }
 
     public boolean isFull(){
-        if(charr.length==top)
-            return true;
-        else
-            return false;
+        return charr.length == top;
     }
     public void push(char ch){
         if(!isFull()){

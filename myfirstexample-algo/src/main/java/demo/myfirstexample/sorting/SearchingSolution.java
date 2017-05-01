@@ -23,7 +23,7 @@ public class SearchingSolution {
             if(search==arr[j]){
                 System.out.println(j);
             }
-        };
+        }
     }
 
 }
