@@ -130,3 +130,7 @@ And the output will be…
 
 ```
        
+#### Usages
+One use is for caching. Imagine you want to maintain an in-memory cache of large objects but you don't want that cache to consume memory that could be used for other purposes (for the cache can always be rebuilt). By maintaining a cache of soft-references to the objects, the referenced objects can be freed by the JVM and the memory they occupied reused for other purposes. The cache would merely need to clear out broken soft-references when it encounters them.
+
+Another use may be for maintaining application images on a memory-constrained device, such as a mobile phone. As the user opens applications, the previous application images could be maintained as soft-references so that they can be cleared out if the memory is needed for something else but will still be there if there is not demand for memory. This will allow the user to return to the application more quickly if there is no pressure on memory and allow the previous application's memory to be reclaimed if it is needed for something
