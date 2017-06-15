@@ -6,12 +6,12 @@ There are four kind of refernce present in java
    3. [Soft Reference](###Soft-Reference###)
    4. [Phantom Reference](###Phantom-Reference###)
  
- ###Strong Reference ###
+ #### Strong Reference 
  
   Strong Reference is most simple as we use it in our day to day programming life e.g. in the code, String s = "abc" , reference variable s has strong reference to String object "abc". Any object which has Strong reference attached to it is not eligible for garbage collection.
   
   
-  ### Weak Reference ###
+   #### Weak Reference
   
   Unlike Soft References, Weak References can be reclaimed by the JVM during a GC cycle, even though there’s enough free memory available.  Our first example on weaker reference models was based on Weak References. As long as GC does not occur, we can retrieve a strong reference out of a weak reference by calling the ref.get() method.
   ```java
@@ -34,7 +34,7 @@ There are four kind of refernce present in java
 
 ```
   
-  ###Soft Reference ###
+  #### Soft Reference 
   According to the Java API Specification, the JVM implementations are encouraged not to clear out a soft reference if the JVM has enough memory. That is, if free heap space is available, chances are that a soft reference will not be freed during a garbage collection cycle (so it survives from GC).  However, before throwing an OutOfMemoryError, JVM will attempt to reclaim memory by releasing instances that are softly reachable.  This makes Soft References ideal for implementing memory sensitive caches (as in our example problem).
   
   Consider the following example.
@@ -69,13 +69,13 @@ And the output will be…
 ```
 
    
-  ### Phantom References ###
+  #### Phantom References 
    
    Phantom references are the weakest form of referencing. Instances that are referred via a phantom reference cannot be accessed directly using a get() method (it always returns null), as in case of Soft / Weak references.
    
    Instead, we need to rely on Reference Queues to make use of Phantom References. We will take a look at reference queues in a while. One use case of Phantom references is to keep track of active references with in an application, and to know when those instances will be garbage collected. If we use strong references, then the instance will not be eligible for GC due to the strong reference we maintain. Instead, we could rely on a phantom reference with the support of a reference queue to handle the situation. An example of Phantom References is provided under Reference Queues below.
    
-   ### Reference Queues ###
+   #### Reference Queues 
    
    ReferenceQueue is the mechanism provided by the JVM to be notified when a referenced instance is about to be garbage collected. Reference Queues can be used with all of the reference types by passing it to the constructor. When creating a PhantomReference, it is a must to provide a Reference Queue.
    
