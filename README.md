@@ -69,7 +69,7 @@ And the output will be…
 ```
 
    
-  #### Phantom References 
+  #### Phantom Reference 
    
    Phantom references are the weakest form of referencing. Instances that are referred via a phantom reference cannot be accessed directly using a get() method (it always returns null), as in case of Soft / Weak references.
    
