@@ -1,8 +1,8 @@
 ## References in JAVA 
 
 There are four kind of refernce present in java 
-   1. [Strong reference](# Strong-Refernce)
-   2. [Weak Reference](# Weak-Reference)
+   1. [Strong reference](#Strong-Refernce)
+   2. [Weak Reference](#Weak-Reference)
    3. [Soft Reference](#Soft-Reference)
    4. [Phantom Reference](#Phantom Reference)
  
