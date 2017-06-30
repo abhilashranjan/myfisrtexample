@@ -1,3 +1,13 @@
+/**
+ * Missing numbers in integer array [1, 2, 3, 4, 6], with total number 6 is
+ * 5	Missing numbers in integer array [10, 2, 3, 4, 6, 7, 9, 8, 1], with total number 10 is
+ * 5	Missing numbers in integer array [1, 2, 3, 4, 6, 9, 8], with total number 10 is
+ * 5	7	10	Missing numbers in integer array [1, 2, 3, 4, 9, 8], with total number 10 is
+ * 5	6	7	10	Missing number in array [1, 2, 3, 5] is 4
+ */
+
+
+
 package demo.myfirst.example.array;
 import java.util.Arrays;
 import java.util.BitSet;
@@ -6,7 +16,7 @@ import java.util.BitSet;
  * Java program to find missing elements in a Integer array containing
  * numbers from 1 to 100.
  *
- * @author Javin Paul
+ * @author Abhilash Ranjan
  */
 class MissingNumberInArray {
 
@@ -16,7 +26,7 @@ class MissingNumberInArray {
         printMissingNumber(new int[]{1, 2, 3, 4, 6}, 6);
 
         // two missing number
-        printMissingNumber(new int[]{1, 2, 3, 4, 6, 7, 9, 8, 10}, 10);
+        printMissingNumber(new int[]{10, 2, 3, 4, 6, 7, 9, 8, 1}, 10);
 
         // three missing number
         printMissingNumber(new int[]{1, 2, 3, 4, 6, 9, 8}, 10);
@@ -48,7 +58,7 @@ class MissingNumberInArray {
 
         for (int i = 0; i < missingCount; i++) {
             lastMissingIndex = bitSet.nextClearBit(lastMissingIndex);
-            System.out.println(++lastMissingIndex);
+            System.out.print(++lastMissingIndex+"\t");
         }
 
     }
