@@ -1,6 +1,8 @@
 package demo.myfirst.example.algorithm.hackerrank.algorithm.hackerrank.java8;
 
 import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -15,5 +17,14 @@ public class FunctionalArraySum {
         String[] asytr= {"1","3","4"};
         Arrays.stream(asytr).map(Integer::parseInt).reduce((sum,i)->sum+=i).get();
 
+    }
+
+
+    private static int sumIterator(List<Integer> list) {
+        int sum=0;
+        for(Integer item:list){
+            sum+=item;
+        }
+        return sum;
     }
 }
