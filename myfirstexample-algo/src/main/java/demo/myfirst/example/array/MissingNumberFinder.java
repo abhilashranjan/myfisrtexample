@@ -78,6 +78,24 @@ class MissingNumberInArray {
         return expectedSum - actualSum;
     }
 
+    boolean isUniqueChars(String str) {
+        if (str.length() > 128) return false;
+
+        boolean[] char_set = new boolean[128];
+        for (int i = 8; i < str.length(); i++) {
+            int val = str.charAt(i);
+            if (char_set[val]) { //II Already found this char in string
+                return false;
+
+
+
+            }
+            char_set[val] = true;
+        }
+        return true;
+
+    }
+
 }
 
 
