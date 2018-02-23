@@ -11,14 +11,22 @@ public class BTLinkList {
             this.right=null;
         }
    }
+    Node root;
+
+    // head --> Pointer to head node of created doubly linked list
+    Node head;
+
+    // Initialize previously visited node as NULL. This is
+    // static so that the same value is accessible in all recursive
+    // calls
 
     static Node prev=null;
-   public static void convertToList(Node root, Node head){
+   public void convertToList(Node root){
         if(root==null){
             return;
         }
 
-        convertToList(root.left,head);
+        convertToList(root.left);
         if(prev==null){
             head=root;
         }else{
@@ -26,16 +34,17 @@ public class BTLinkList {
             prev.right=root;
         }
         prev=root;
-        convertToList(root.right,head);
+        convertToList(root.right);
    }
 
-   public static void print(Node root){
+   public void print(Node root){
         while(root!=null){
-            System.out.print(root.data);
+            System.out.print(root.data+"-->");
             root= root.right;
         }
    }
     public static void main(String[] args) {
+       BTLinkList btLinkList= new BTLinkList();
         Node n1= new Node(1);
         Node n2= new Node(2);
         Node n3= new Node(3);
@@ -49,9 +58,9 @@ public class BTLinkList {
         n2.right=n5;
         n3.left=n6;
         n3.right=n7;
-
-        Node head=new Node(0);
-        convertToList(n1,head);
-        print(head);
+        btLinkList.root=n1;
+//        Node head=new Node(0);
+        btLinkList.convertToList(btLinkList.root);
+        btLinkList.print(btLinkList.head);
     }
 }
