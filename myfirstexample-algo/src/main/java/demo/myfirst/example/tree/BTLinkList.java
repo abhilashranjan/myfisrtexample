@@ -37,7 +37,9 @@ public class BTLinkList {
         convertToList(root.right);
    }
 
-   public void print(Node root){
+
+
+    public void print(Node root){
         while(root!=null){
             System.out.print(root.data+"-->");
             root= root.right;
@@ -59,8 +61,9 @@ public class BTLinkList {
         n3.left=n6;
         n3.right=n7;
         btLinkList.root=n1;
+//        Node head = null;
 //        Node head=new Node(0);
-        btLinkList.convertToList(btLinkList.root);
+        btLinkList.convertToList(n1);
         btLinkList.print(btLinkList.head);
     }
 }
